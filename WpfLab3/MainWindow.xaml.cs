@@ -36,10 +36,10 @@ namespace WpfLab3
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            int fontFamily = Convert.ToInt32(((sender as ComboBox).SelectedItem as TextBlock).Text);
+            int fontSize = Convert.ToInt32(((sender as ComboBox).SelectedItem as TextBlock).Text);
             if (textBox != null)
             {
-                textBox.FontSize =  fontFamily;
+                textBox.FontSize =  fontSize;
             }
         }
     }
