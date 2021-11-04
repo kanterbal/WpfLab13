@@ -42,5 +42,45 @@ namespace WpfLab3
                 textBox.FontSize =  fontSize;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (textBox.FontWeight == FontWeights.Normal)
+            {
+                textBox.FontWeight = FontWeights.Bold;
+            }
+            else
+            {
+                textBox.FontWeight = FontWeights.Normal;
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (textBox.FontStyle == FontStyles.Italic)
+            {
+                textBox.FontStyle = FontStyles.Normal;
+               
+            }
+            else
+            {
+                textBox.FontStyle = FontStyles.Italic;
+                
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (textBox.TextDecorations == TextDecorations.Underline)
+            {
+                textBox.TextDecorations = null;
+
+            }
+            else
+            {
+                textBox.TextDecorations = TextDecorations.Underline;
+
+            }
+        }
     }
 }

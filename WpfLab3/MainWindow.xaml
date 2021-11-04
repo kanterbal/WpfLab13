@@ -25,15 +25,15 @@
                 </ComboBox>
             </ToolBar>
             <ToolBar Margin="5" Padding="5">
-                <Button>
+                <Button Click="Button_Click">
                     <Image Source="Data\bold.png" Width="30"/>
                 </Button>
                 <Separator/>
-                <Button>
+                <Button Click="Button_Click_1">
                     <Image Source="Data\italic.png" Width="30"/>
                 </Button>
                 <Separator/>
-                <Button>
+                <Button Click="Button_Click_2">
                     <Image Source="Data\underline.png" Width="30"/>
                 </Button>
             </ToolBar>
@@ -44,8 +44,8 @@
                 </StackPanel>
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="textBox" Grid.Row="1" Margin="5" Padding="5" FontSize="16" FontFamily="Arial" Foreground="Black" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto">
-            
-        </TextBox>
+        <TextBox x:Name="textBox" Grid.Row="1" Margin="5" Padding="5" FontSize="16" FontFamily="Arial" Foreground="Black" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+
     </Grid>
 </Window>
