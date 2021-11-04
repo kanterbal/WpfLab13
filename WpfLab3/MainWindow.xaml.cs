@@ -39,7 +39,7 @@ namespace WpfLab3
             int fontSize = Convert.ToInt32(((sender as ComboBox).SelectedItem as TextBlock).Text);
             if (textBox != null)
             {
-                textBox.FontSize =  fontSize;
+                textBox.FontSize = fontSize;
             }
         }
 
@@ -60,12 +60,12 @@ namespace WpfLab3
             if (textBox.FontStyle == FontStyles.Italic)
             {
                 textBox.FontStyle = FontStyles.Normal;
-               
+
             }
             else
             {
                 textBox.FontStyle = FontStyles.Italic;
-                
+
             }
         }
 
@@ -80,6 +80,28 @@ namespace WpfLab3
             {
                 textBox.TextDecorations = TextDecorations.Underline;
 
+            }
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (textBox != null)
+            {
+                if (textBox.Foreground.ToString() != "Black")
+                {
+                    textBox.Foreground = Brushes.Black;
+                }
+            }
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            if (textBox != null)
+            {
+                if (textBox.Foreground.ToString() != "Red")
+                {
+                    textBox.Foreground = Brushes.Red;
+                }
             }
         }
     }

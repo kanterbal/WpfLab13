@@ -39,8 +39,8 @@
             </ToolBar>
             <ToolBar Margin="5" Padding="5">
                 <StackPanel>
-                    <RadioButton Content="Черный" IsChecked="True"/>
-                    <RadioButton Content="Красный"/>
+                    <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Красный" Checked="RadioButton_Checked_1"/>
                 </StackPanel>
             </ToolBar>
         </ToolBarTray>
