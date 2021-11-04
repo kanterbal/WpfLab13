@@ -24,5 +24,23 @@ namespace WpfLab3
         {
             InitializeComponent();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string fontFamily = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+            if (textBox != null)
+            {
+                textBox.FontFamily = new FontFamily(fontFamily);
+            }
+        }
+
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            int fontFamily = Convert.ToInt32(((sender as ComboBox).SelectedItem as TextBlock).Text);
+            if (textBox != null)
+            {
+                textBox.FontSize =  fontFamily;
+            }
+        }
     }
 }

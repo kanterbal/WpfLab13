@@ -13,12 +13,12 @@
         </Grid.RowDefinitions>
         <ToolBarTray Grid.Row="0">
             <ToolBar Margin="5" Padding="5">
-                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200">
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged">
                     <TextBlock Text="Arial"/>
                     <TextBlock Text="Times New Roman"/>
                     <TextBlock Text="Verdana"/>
                 </ComboBox>
-                <ComboBox Margin="5" Padding="5" SelectedIndex="1" Width="50">
+                <ComboBox Margin="5" Padding="5" SelectedIndex="1" Width="50" SelectionChanged="ComboBox_SelectionChanged_1">
                     <TextBlock Text="12"/>
                     <TextBlock Text="16"/>
                     <TextBlock Text="22"/>
@@ -37,6 +37,15 @@
                     <Image Source="Data\underline.png" Width="30"/>
                 </Button>
             </ToolBar>
+            <ToolBar Margin="5" Padding="5">
+                <StackPanel>
+                    <RadioButton Content="Черный" IsChecked="True"/>
+                    <RadioButton Content="Красный"/>
+                </StackPanel>
+            </ToolBar>
         </ToolBarTray>
+        <TextBox x:Name="textBox" Grid.Row="1" Margin="5" Padding="5" FontSize="16" FontFamily="Arial" Foreground="Black" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto">
+            
+        </TextBox>
     </Grid>
 </Window>
