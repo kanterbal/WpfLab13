@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.IO;
+using System.Windows.Ink;
 
 namespace WpfLab5._2
 {
@@ -38,8 +39,32 @@ namespace WpfLab5._2
             openFileDialog.Filter = "Графические файлы (*.jpg) | *.jpg|Все файлы (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                IncCanvas1. = File.ReadAllText(openFileDialog.FileName);
+                var fs = new FileStream(openFileDialog.FileName, FileMode.Open, FileAccess.Read);
+                StrokeCollection strokes = new StrokeCollection(fs);
+                InkCanvas1.Strokes = strokes;
             }
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Графические файлы (*.jpg) | *.jpg|Все файлы (*.*)|*.*";
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                var fs = new FileStream(saveFileDialog.FileName, FileMode.Create);
+                InkCanvas1.Strokes.Save(fs);
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            InkCanvas1.EditingMode = InkCanvasEditingMode.EraseByPoint;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            InkCanvas1.EditingMode = InkCanvasEditingMode.Ink;
+            //InkCanvas1.DefaultDrawingAttributes.Color = Color.FromRgb(0, 0, 0);
         }
     }
 }
