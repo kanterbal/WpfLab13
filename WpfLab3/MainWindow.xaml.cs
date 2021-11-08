@@ -55,6 +55,7 @@ namespace WpfLab3
             }
         }
 
+
         private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
         {
             if (textBox != null)
