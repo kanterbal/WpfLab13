@@ -25,11 +25,12 @@ namespace WpfLab3
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string fontFamily = ((sender as ComboBox).SelectedItem as TextBlock).Text;
+            string fontFamily = (sender as ComboBox).Text;
             if (textBox != null)
             {
                 textBox.FontFamily = new FontFamily(fontFamily);
@@ -38,10 +39,10 @@ namespace WpfLab3
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            int fontSize = Convert.ToInt32(((sender as ComboBox).SelectedItem as TextBlock).Text);
+            string fontSize = (sender as ComboBox).Text;
             if (textBox != null)
             {
-                textBox.FontSize = fontSize;
+                textBox.FontSize = Convert.ToInt32(fontSize);
             }
         }
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -129,6 +130,15 @@ namespace WpfLab3
             {
                 textBox.TextDecorations = TextDecorations.Underline;
 
+            }
+        }
+
+        private void ComboBox_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+            string fontFamily = (sender as ComboBox).Text;
+            if (textBox != null)
+            {
+                textBox.FontFamily = new FontFamily(fontFamily);
             }
         }
     }
