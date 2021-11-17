@@ -48,8 +48,8 @@
             </ToolBar>
             <ToolBar Style="{DynamicResource ToolBarStyle}">
                 <StackPanel>
-                    <RadioButton Content="Черный"  IsChecked="{Binding Path=ModeArray[0], Mode=TwoWay}" Style="{DynamicResource RadioButtonStyle}"/>
-                    <RadioButton Content="Красный" IsChecked="{Binding Path=ModeArray[1], Mode=TwoWay}" Style="{DynamicResource RadioButtonStyle}"/>
+                    <RadioButton Content="Черный"  IsChecked="True" Style="{DynamicResource RadioButtonStyle}" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="Красный"  Style="{DynamicResource RadioButtonStyle}" Checked="RadioButton_Checked_1"/>
                 </StackPanel>
             </ToolBar>
             <ToolBar Style="{DynamicResource ToolBarStyle}">
@@ -57,7 +57,6 @@
             </ToolBar>
         </ToolBarTray>
         <TextBox x:Name="textBox" Grid.Row="2" Style="{DynamicResource TextBoxStyle}"
-                 Foreground="{Binding Path=SelectedMode}"
                  FontFamily="{Binding ElementName=fontFamily, Path=SelectedItem}"
                  FontSize="{Binding ElementName=fontSize, Path=SelectedItem}"/>
 

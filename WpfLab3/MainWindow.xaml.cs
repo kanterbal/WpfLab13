@@ -75,28 +75,28 @@ namespace WpfLab3
         //        textBox.FontSize = Convert.ToInt32(fontSize);
         //    }
         //}
-        //private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        //{
-        //    if (textBox != null)
-        //    {
-        //        if (textBox.Foreground.ToString() != "Black")
-        //        {
-        //            textBox.Foreground = Brushes.Black;
-        //        }
-        //    }
-        //}
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (textBox != null)
+            {
+                if (textBox.Foreground.ToString() != "Black")
+                {
+                    textBox.Foreground = Brushes.Black;
+                }
+            }
+        }
 
 
-        //private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
-        //{
-        //    if (textBox != null)
-        //    {
-        //        if (textBox.Foreground.ToString() != "Red")
-        //        {
-        //            textBox.Foreground = Brushes.Red;
-        //        }
-        //    }
-        //}
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+            if (textBox != null)
+            {
+                if (textBox.Foreground.ToString() != "Red")
+                {
+                    textBox.Foreground = Brushes.Red;
+                }
+            }
+        }
 
         private void ExitExecuted(object sender, ExecutedRoutedEventArgs e)
         {
