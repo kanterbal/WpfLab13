@@ -29,7 +29,20 @@ namespace WpfLab3
             styleBox.ItemsSource = styles;
             styleBox.SelectionChanged += ThemeChange;
             styleBox.SelectedIndex = 0;
-            
+           
+        
+    }
+
+        private bool[] _modeArray = new bool[] { true, false };
+
+        public bool[] ModeArray
+        {
+            get { return _modeArray; }
+        }
+
+        public SolidColorBrush SelectedMode
+        {
+            get { return _modeArray[0] ? new SolidColorBrush(Colors.Black) : new SolidColorBrush(Colors.Red); }
         }
 
         private void ThemeChange(object sender, SelectionChangedEventArgs e)
@@ -45,45 +58,45 @@ namespace WpfLab3
             Application.Current.Resources.MergedDictionaries.Add(resource);
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string fontFamily = (sender as ComboBox).SelectedItem as string;
-            if (textBox != null)
-            {
-                textBox.FontFamily = new FontFamily(fontFamily);
-            }
-        }
+        //private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    string fontFamily = (sender as ComboBox).SelectedItem as string;
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontFamily = new FontFamily(fontFamily);
+        //    }
+        //}
 
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            string fontSize = (sender as ComboBox).SelectedItem as string;
-            if (textBox != null)
-            {
-                textBox.FontSize = Convert.ToInt32(fontSize);
-            }
-        }
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            if (textBox != null)
-            {
-                if (textBox.Foreground.ToString() != "Black")
-                {
-                    textBox.Foreground = Brushes.Black;
-                }
-            }
-        }
+        //private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        //{
+        //    string fontSize = (sender as ComboBox).SelectedItem as string;
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontSize = Convert.ToInt32(fontSize);
+        //    }
+        //}
+        //private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    if (textBox != null)
+        //    {
+        //        if (textBox.Foreground.ToString() != "Black")
+        //        {
+        //            textBox.Foreground = Brushes.Black;
+        //        }
+        //    }
+        //}
 
 
-        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
-        {
-            if (textBox != null)
-            {
-                if (textBox.Foreground.ToString() != "Red")
-                {
-                    textBox.Foreground = Brushes.Red;
-                }
-            }
-        }
+        //private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        //{
+        //    if (textBox != null)
+        //    {
+        //        if (textBox.Foreground.ToString() != "Red")
+        //        {
+        //            textBox.Foreground = Brushes.Red;
+        //        }
+        //    }
+        //}
 
         private void ExitExecuted(object sender, ExecutedRoutedEventArgs e)
         {
@@ -150,13 +163,13 @@ namespace WpfLab3
             }
         }
 
-        private void ComboBox_ContextMenuClosing(object sender, ContextMenuEventArgs e)
-        {
-            string fontFamily = (sender as ComboBox).Text;
-            if (textBox != null)
-            {
-                textBox.FontFamily = new FontFamily(fontFamily);
-            }
-        }
+        //private void ComboBox_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        //{
+        //    string fontFamily = (sender as ComboBox).Text;
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontFamily = new FontFamily(fontFamily);
+        //    }
+        //}
     }
 }

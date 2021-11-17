@@ -30,8 +30,8 @@
         </Menu>
         <ToolBarTray Grid.Row="1" Style="{DynamicResource WindowStyle}">
             <ToolBar Style="{DynamicResource ToolBarStyle}">
-                <ComboBox Style="{DynamicResource ComboBoxStyle}" SelectedIndex="0" Width="150" SelectionChanged="ComboBox_SelectionChanged" ItemsSource="{StaticResource fonts}"/>
-                <ComboBox Style="{DynamicResource ComboBoxStyle}" SelectedIndex="0" Width="50" SelectionChanged="ComboBox_SelectionChanged_1" ItemsSource="{StaticResource sizes}"/>
+                <ComboBox x:Name="fontFamily" Style="{DynamicResource ComboBoxStyle}" SelectedIndex="0" Width="150"  ItemsSource="{StaticResource fonts}"/>
+                <ComboBox x:Name="fontSize" Style="{DynamicResource ComboBoxStyle}" SelectedIndex="0" Width="50"  ItemsSource="{StaticResource sizes}"/>
             </ToolBar>
             <ToolBar Style="{DynamicResource ToolBarStyle}">
                 <Button Command="local:MyCommands.Bold">
@@ -48,15 +48,18 @@
             </ToolBar>
             <ToolBar Style="{DynamicResource ToolBarStyle}">
                 <StackPanel>
-                    <RadioButton Content="Черный" IsChecked="True" Checked="RadioButton_Checked" Style="{DynamicResource RadioButtonStyle}"/>
-                    <RadioButton Content="Красный" Checked="RadioButton_Checked_1" Style="{DynamicResource RadioButtonStyle}"/>
+                    <RadioButton Content="Черный"  IsChecked="{Binding Path=ModeArray[0], Mode=TwoWay}" Style="{DynamicResource RadioButtonStyle}"/>
+                    <RadioButton Content="Красный" IsChecked="{Binding Path=ModeArray[1], Mode=TwoWay}" Style="{DynamicResource RadioButtonStyle}"/>
                 </StackPanel>
             </ToolBar>
             <ToolBar Style="{DynamicResource ToolBarStyle}">
                 <ComboBox x:Name="styleBox" Width="150" Style="{DynamicResource ComboBoxStyle}"/>
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="textBox" Grid.Row="2" Style="{DynamicResource TextBoxStyle}"/>
+        <TextBox x:Name="textBox" Grid.Row="2" Style="{DynamicResource TextBoxStyle}"
+                 Foreground="{Binding Path=SelectedMode}"
+                 FontFamily="{Binding ElementName=fontFamily, Path=SelectedItem}"
+                 FontSize="{Binding ElementName=fontSize, Path=SelectedItem}"/>
 
 
     </Grid>
